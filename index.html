@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Inteliment</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/dashboard.css" rel="stylesheet">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery.flot.min.js"></script>
+		<script src="js/jquery.flot.time.min.js"></script>
+		<script src="js/jquery.flot.pie.min.js"></script>
+		<script src="js/jquery.flot.categories.min.js"></script>
+		<script src="js/date.js"></script>
+		<script>
+			var currpage = "portfilio",
+				placeholder = "";
+			
+			var data = [
+					{ label: "Residential Property",  data: 5038.85},
+					{ label: "Investment Property",  data: 10464.75},
+					{ label: "Shares",  data: 23775.56},
+					{ label: "Fund",  data: 7873.84},
+					{ label: "SMSF",  data: 2501.1}
+				];
+			
+			var data1 = [
+					{ label: "Technology",  data: 5212.35},
+					{ label: "Energy",  data: 8667},
+					{ label: "Consumer Cyclical",  data: 9084.41},
+					{ label: "Industrials",  data: 4780.84},
+					{ label: "Consumer Defensive",  data: 6438},
+					{ label: "Financial Services",  data: 15471.5}
+				];
+			
+			var linedata1 = [{ data: [[Date.UTC(2014, 0), 50000], [Date.UTC(2015, 0), 190905.8929], [Date.UTC(2016, 0), 159405.6071], [Date.UTC(2017, 0), 126933.2529], [Date.UTC(2018, 0), 90836.23994], [Date.UTC(2019, 0), 50945.43344], [Date.UTC(2020, 0), -102297.774], [Date.UTC(2021, 0), -249544.7435], [Date.UTC(2022, 0), -401409.4599], [Date.UTC(2023, 0), -557737.1452]], label: "Savings"},
+				{ data: [[Date.UTC(2014, 0), 8225.48], [Date.UTC(2015, 0), 8060.97], [Date.UTC(2016, 0), 7899.75], [Date.UTC(2017, 0), 25725.96], [Date.UTC(2018, 0), 29842.37], [Date.UTC(2019, 0), 29245.52], [Date.UTC(2020, 0), 28660.61], [Date.UTC(2021, 0), 28087.4], [Date.UTC(2022, 0), 27525.65], [Date.UTC(2023, 0), 28346.74]], label: "Pension"},
+				{ data: [[Date.UTC(2014, 0), 5392.86], [Date.UTC(2015, 0), 5607.14], [Date.UTC(2016, 0), 5827.86], [Date.UTC(2017, 0), 6055.19], [Date.UTC(2018, 0), 6289.35], [Date.UTC(2019, 0), 6530.53], [Date.UTC(2020, 0), 6778.94], [Date.UTC(2021, 0), 7034.81], [Date.UTC(2022, 0), 7298.36], [Date.UTC(2023, 0), 7569.81]], label: "Dividend"},
+				{ data: [[Date.UTC(2014, 0), -13600], [Date.UTC(2015, 0), -13001.91], [Date.UTC(2016, 0), -12430.13], [Date.UTC(2017, 0), -11883.49], [Date.UTC(2018, 0), -11360.89], [Date.UTC(2019, 0), -10861.27], [Date.UTC(2020, 0), -10392.97], [Date.UTC(2021, 0), -10195.01], [Date.UTC(2022, 0), -9746.66], [Date.UTC(2023, 0), -9318.03]], label: "Rent"},
+				{ data: [[Date.UTC(2014, 0), 1133.19], [Date.UTC(2015, 0), 1393.26], [Date.UTC(2016, 0), 9886.6], [Date.UTC(2017, 0), 9998], [Date.UTC(2018, 0), 10120.95], [Date.UTC(2019, 0), 10255.66], [Date.UTC(2020, 0), 11116.6], [Date.UTC(2021, 0), 12011.11], [Date.UTC(2022, 0), 12940.03], [Date.UTC(2023, 0), 13189.98]], label: "PI"}];
+			
+			var linedata2 = [{ data: [[Date.UTC(2014, 0), 500000], [Date.UTC(2015, 0), 590422], [Date.UTC(2016, 0), 681886], [Date.UTC(2017, 0), 774601], [Date.UTC(2018, 0), 868781], [Date.UTC(2019, 0), 964643], [Date.UTC(2020, 0), 1062411], [Date.UTC(2021, 0), 1162312], [Date.UTC(2022, 0), 1264580], [Date.UTC(2023, 0), 1369458]], label: "Equity"},
+				{ data: [[Date.UTC(2014, 0), 1000000], [Date.UTC(2015, 0), 1100000], [Date.UTC(2016, 0), 1210000], [Date.UTC(2017, 0), 1331000], [Date.UTC(2018, 0), 1464100], [Date.UTC(2019, 0), 1610510], [Date.UTC(2020, 0), 1771561], [Date.UTC(2021, 0), 1948717], [Date.UTC(2022, 0), 2143589], [Date.UTC(2023, 0), 2357948]], label: "Home"},
+				{ data: [[Date.UTC(2014, 0), 500000], [Date.UTC(2015, 0), 482419], [Date.UTC(2016, 0), 463938], [Date.UTC(2017, 0), 444512], [Date.UTC(2018, 0), 424091], [Date.UTC(2019, 0), 402626], [Date.UTC(2020, 0), 380063], [Date.UTC(2021, 0), 356346], [Date.UTC(2022, 0), 331415], [Date.UTC(2023, 0), 305208]], label: "Mortgage"}];
+			
+			var linedata3 = [{ data: [[Date.UTC(2014, 0), 1000000], [Date.UTC(2015, 0), 1100000], [Date.UTC(2016, 0), 1210000], [Date.UTC(2017, 0), 1331000], [Date.UTC(2018, 0), 1464100], [Date.UTC(2019, 0), 1610510], [Date.UTC(2020, 0), 1781561], [Date.UTC(2021, 0), 1969717.1], [Date.UTC(2022, 0), 2166688.81], [Date.UTC(2023, 0), 2383357.691]], label: "Property"},
+				{ data: [[Date.UTC(2014, 0), 100000], [Date.UTC(2015, 0), 103000], [Date.UTC(2016, 0), 106090], [Date.UTC(2017, 0), 109272.7], [Date.UTC(2018, 0), 112550.881], [Date.UTC(2019, 0), 115927.4074], [Date.UTC(2020, 0), 119405.2297], [Date.UTC(2021, 0), 122987.3865], [Date.UTC(2022, 0), 126677.0081], [Date.UTC(2023, 0), 130477.3184]], label: "Portfolio"},
+				{ data: [[Date.UTC(2014, 0), 50000], [Date.UTC(2015, 0), 190905.8929], [Date.UTC(2016, 0), 159405.6071], [Date.UTC(2017, 0), 126933.2529], [Date.UTC(2018, 0), 90836.23994], [Date.UTC(2019, 0), 50945.43344], [Date.UTC(2020, 0), -102297.774], [Date.UTC(2021, 0), -249544.7435], [Date.UTC(2022, 0), -401409.4599], [Date.UTC(2023, 0), -557737.1452]], label: "Savings"},
+				{ data: [[Date.UTC(2014, 0), 925000], [Date.UTC(2015, 0), 1133848.846], [Date.UTC(2016, 0), 1167751.004], [Date.UTC(2017, 0), 1205600.342], [Date.UTC(2018, 0), 1245296.807], [Date.UTC(2019, 0), 1287119.7], [Date.UTC(2020, 0), 1252431.794], [Date.UTC(2021, 0), 1228056.658], [Date.UTC(2022, 0), 1213860.626], [Date.UTC(2023, 0), 1208940.461]], label: "Net Investment"}];
+				
+			var linedata4 = [{ data: [[Date.UTC(2014, 0), 1000000], [Date.UTC(2015, 0), 1100000], [Date.UTC(2016, 0), 1210000], [Date.UTC(2017, 0), 1331000], [Date.UTC(2018, 0), 1464100], [Date.UTC(2019, 0), 1610510], [Date.UTC(2020, 0), 1771561], [Date.UTC(2021, 0), 1948717.1], [Date.UTC(2022, 0), 2143588.81], [Date.UTC(2023, 0), 2357947.691]], label: "Home"},
+				{ data: [[Date.UTC(2014, 0), 1350000], [Date.UTC(2015, 0), 1540158.597], [Date.UTC(2016, 0), 1556192.449], [Date.UTC(2017, 0), 1576959.276], [Date.UTC(2018, 0), 1600324.469], [Date.UTC(2019, 0), 1626534.291], [Date.UTC(2020, 0), 1577194.79], [Date.UTC(2021, 0), 1546157.951], [Date.UTC(2022, 0), 1517972.761], [Date.UTC(2023, 0), 1499678.639]], label: "Investments"},
+				{ data: [[Date.UTC(2014, 0), 425000], [Date.UTC(2015, 0), 406309.7514], [Date.UTC(2016, 0), 388441.445], [Date.UTC(2017, 0), 371358.934], [Date.UTC(2018, 0), 355027.6616], [Date.UTC(2019, 0), 339414.5904], [Date.UTC(2020, 0), 324762.9967], [Date.UTC(2021, 0), 318101.2928], [Date.UTC(2022, 0), 304112.1346], [Date.UTC(2023, 0), 290738.1784]], label: "Total Loans"}];
+				
+			var bardata = [ ["AMP", 15472], ["LNCO", 8667], ["ADRD", 6438], ["SBUX", 5570], ["MSFT", 5039], ["R", 2501], ["F", 1798], ["JACK", 1717], ["BGSC", 855], ["GE", 838]];
+			var pi = [[Date.UTC(2008, 0), 2000], [Date.UTC(2009, 0), 3028], [Date.UTC(2010, 0), 4883], [Date.UTC(2011, 0), 6250], [Date.UTC(2012, 0), 7332], [Date.UTC(2013, 0), 8556], [Date.UTC(2014, 0), 9663], [Date.UTC(2015, 0), 11103], [Date.UTC(2016, 0), 13091], [Date.UTC(2017, 0), 14253], [Date.UTC(2018, 0), 15924], [Date.UTC(2019, 0), 17650], [Date.UTC(2020, 0), 19554], [Date.UTC(2021, 0), 21056], [Date.UTC(2022, 0), 22416], [Date.UTC(2023, 0), 23581]];
+			var sur = [[Date.UTC(2008, 0), 32000], [Date.UTC(2009, 0), 32691], [Date.UTC(2010, 0), 33362], [Date.UTC(2011, 0), 35583], [Date.UTC(2012, 0), 36344], [Date.UTC(2013, 0), 36028], [Date.UTC(2014, 0), 34938], [Date.UTC(2015, 0), 34468], [Date.UTC(2016, 0), 37308], [Date.UTC(2017, 0), 38551], [Date.UTC(2018, 0), 37628], [Date.UTC(2019, 0), 37117], [Date.UTC(2020, 0), 36563], [Date.UTC(2021, 0), 35036], [Date.UTC(2022, 0), 37338], [Date.UTC(2023, 0), 37942]];
+			
+			function load()
+			{
+				drawpie(data,'p1');
+				drawarea();
+			}
+			
+			function drawpie(d,t)
+			{
+				if(t === "p1")
+				{
+					placeholder = $("#homepie");
+				}
+				else if(t === "p2")
+				{
+					placeholder = $("#homepie1");
+				}
+				
+				placeholder.unbind();
+
+				$.plot(placeholder, d, {
+					series: {
+						pie: { 
+							show: true,
+							radius: 1,
+							tilt: 0.5,
+							label: {
+								show: true,
+								radius: 1,
+								formatter: labelFormatter,
+								background: {
+									opacity: 0.8
+								}
+							},
+							combine: {
+								color: "#999",
+								threshold: 0
+							}
+						}
+					},
+					legend: {
+						show: false
+					}
+				});
+			}
+			
+			function labelFormatter(label, series) {
+				return "<div style='font-size:8pt; text-align:center; padding:2px; color:white;'>" + label + "<br/>" + Math.round(series.percent) + "%</div>";
+			}
+			
+			function drawarea()
+			{
+				placeholder = $("#homearea");
+				placeholder.unbind();
+				$.plot(placeholder, [
+						{ data: pi, label: "Passive Income"},
+						{ data: sur, label: "Surplus"}
+					], {
+					series: {
+						lines: {
+							show: true,
+							fill: true
+						},
+						points: {
+							show: true
+						}
+					},
+					grid: {
+						hoverable: true
+					},
+					legend: { position: "se" },
+					xaxis: { mode: "time" },
+					yaxis: { tickFormatter: function(value, axis) {
+												return "$"+value;
+											}
+							}
+				});
+				
+				$("<div id='tooltip'></div>").css({
+					position: "absolute",
+					display: "none",
+					border: "1px solid #fdd",
+					padding: "2px",
+					"background-color": "#fee",
+					opacity: 0.80
+				}).appendTo("body");
+				
+				$("#homearea").bind("plothover", function (event, pos, item) {
+						if (item) {
+							var y = item.datapoint[1];
+
+							$("#tooltip").html(item.series.label + "</br>$" + y)
+								.css({top: item.pageY+5, left: item.pageX+15})
+								.fadeIn(200);
+						} else {
+							$("#tooltip").hide();
+						}
+					
+				});
+			}
+			
+			function drawline(l)
+			{ 
+				if(l === 1)
+				{
+					placeholder = $("#pi");
+					var a = linedata1;
+				}
+				else if(l === 2)
+				{
+					placeholder = $("#mr");
+					var a = linedata2;
+				}
+				else if(l === 3)
+				{
+					placeholder = $("#niw");
+					var a = linedata3;
+				}
+				else if(l === 4)
+				{
+					placeholder = $("#ta");
+					var a = linedata4;
+				}
+				placeholder.unbind();
+				$.plot(placeholder, a, {
+					series: {
+						lines: {
+							show: true
+						},
+						points: {
+							show: true
+						}
+					},
+					grid: {
+						hoverable: true
+					},
+					legend: { position: "se" },
+					xaxis: { mode: "time" },
+					yaxis: { tickFormatter: function(value, axis) {
+												return "$"+value;
+											}
+							}
+				});
+				
+				placeholder.bind("plothover", function (event, pos, item) {
+						if (item) {
+							var y = item.datapoint[1];
+
+							$("#tooltip").html(item.series.label + "</br>$" + y)
+								.css({top: item.pageY+5, left: item.pageX+15})
+								.fadeIn(200);
+						} else {
+							$("#tooltip").hide();
+						}
+					
+				});
+			}
+			
+			function drawbar()
+			{
+				var markings = [
+					{ color: "#f6f6ff", xaxis: { from: -0.5, to: 4.5 } }
+				];
+				
+				$.plot("#homebar", [ bardata ], {
+					series: {
+						bars: {
+							show: true,
+							barWidth: 0.6,
+							align: "center",
+							lineWidth: 0,
+							fillColor: "#428BCA"
+						}
+					},
+					xaxis: {
+						mode: "categories",
+						tickLength: 0
+					},
+					yaxis: { tickFormatter: function(value, axis) {
+												return "$"+value;
+											}
+							},
+					grid: {
+						hoverable: true,
+						markings: markings
+					},
+					 highlightColor: "#9440ED"
+				});
+				
+				$("#homebar").bind("plothover", function (event, pos, item) {
+						if (item) {
+							var y = item.datapoint[1];
+
+							$("#tooltip").html("Value</br>$" + y)
+								.css({top: item.pageY+5, left: item.pageX+15})
+								.fadeIn(200);
+						} else {
+							$("#tooltip").hide();
+						}
+					
+				});
+			}
+			
+			function pageslide(p)
+			{
+				if(currpage !== p)
+				{
+					$("#"+currpage).toggle( "slide" );
+					$("#"+p).toggle( "slide" );
+					currpage = p;
+					
+					if(currpage === "currplan")
+					{
+						setTimeout(function(){
+							drawline(1);
+						},500);
+					}
+				}
+			}
+			
+			function tclick(tc)
+			{
+				setTimeout(function(){
+					if(tc === "pi")
+					{
+						drawline(1);
+					}
+					else if(tc === "mr")
+					{
+						drawline(2);
+					}
+					else if(tc === "niw")
+					{
+						drawline(3);
+					}
+					else if(tc === "ta")
+					{
+						drawline(4);
+					}
+				},200);
+			}
+			
+			$(document).ready(function(){
+				$(".panel-body").css("height", $(".panel-body").innerWidth() - 70);
+				$(".panel").on("mouseover", function(){
+					$(this).removeClass( "panel-info" ).addClass("panel-primary");
+				});
+				$(".panel").on("mouseout", function(){
+					$(this).removeClass( "panel-primary" ).addClass("panel-info");
+				});
+				$("#rightnav a").on("click", function(){
+					$('#rightnav li').removeClass('active');
+					$(this).parent("li").addClass('active');
+				});
+				$(".chartdiv").css("height", (window.innerHeight - $(".navbar").innerHeight() - 2*$(".nav").innerHeight() - 2*$(".page-header").innerHeight()));
+				//$(".chartdiv").css("height", 490);
+					
+				$("#col_draw").on("click", function(){
+					setTimeout(function(){
+						drawpie(data1, 'p2');
+					},100);
+				});
+				
+				$("#col_draw1").on("click", function(){
+					setTimeout(function(){
+						drawbar();
+					},100);
+				});
+				
+				$.ajax({
+					type: "GET",
+					url: "Quotes.xml",
+					dataType: "xml",
+					success: xmlParser
+				});
+				
+				function xmlParser(xml) {
+					$(xml).find("Item").each(function () {
+
+						var a = '<tr><td>' + $(this).find("RequestKey").attr("Name") + '</td>';
+						$(this).find("Field").each(function () { 
+							if($(this).attr("Name") === "CF_BID" || $(this).attr("Name") === "CF_ASK" || $(this).attr("Name") === "CF_NETCHNG" || $(this).attr("Name") === "CF_YIELD" || $(this).attr("Name") === "CF_LAST" || $(this).attr("Name") === "CF_VOLUME")   
+							{
+								a += '<td class="number">' + $(this).text() + '</td>';
+							}	
+						});
+						a += '</tr>';
+						$("#wl_summary").append(a);
+					 });
+				}
+			});
+		</script>
+	</head>
+	<body onload="load()">
+
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Personal Financer</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Welcome Yashad</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+					<ul id="rightnav" class="nav nav-sidebar">
+						<li class="active"><a href="javascript:pageslide('portfilio')">Portfilio</a></li>
+						<li><a href="javascript:pageslide('currplan')">Current Plan</a></li>
+						<li><a href="javascript:pageslide('makeplan')">Make Plan</a></li>
+						<li><a href="#">Shares</a></li>
+						<li><a href="#">Funds</a></li>
+						<li><a href="javascript:pageslide('watchlist')">Watchlist</a></li>
+					</ul>
+				</div>
+			
+				<div id="portfilio" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<h3 class="page-header">My Portfilio</h3>
+
+					<div class="row placeholders">
+						<div class="col-xs-6 col-sm-6 placeholder">
+							<div class="panel-group" id="surplus_toggle">
+								<div class="panel panel-info">
+									<div class="panel-heading" data-toggle="collapse" data-parent="#surplus_toggle" href="#collapseSurplus">
+										<h4 class="panel-title">
+											<h3 class="panel-title">Projected Surplus</h3>
+										</h4>
+									</div>
+									<div id="collapseSurplus" class="panel-collapse collapse in">
+										<div class="panel-body" id="homearea"></div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div id="col_draw1" class="panel-heading"  data-toggle="collapse" data-parent="#surplus_toggle" href="#collapseComp">
+										<h4 class="panel-title">
+											<h3 class="panel-title">Top 5 Companies</h3>
+										</h4>
+									</div>
+									<div id="collapseComp" class="panel-collapse collapse">
+										<div class="panel-body" id="homebar"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-6 placeholder">
+							<div class="panel-group" id="summary_toggle">
+								<div class="panel panel-info">
+									<div class="panel-heading" data-toggle="collapse" data-parent="#summary_toggle" href="#collapseSummary">
+										<h4 class="panel-title">
+											<h3 class="panel-title">Summary</h3>
+										</h4>
+									</div>
+									<div id="collapseSummary" class="panel-collapse collapse in">
+										<div class="panel-body" id="homepie"></div>
+									</div>
+								</div>
+								<div class="panel panel-info">
+									<div id="col_draw" class="panel-heading"  data-toggle="collapse" data-parent="#summary_toggle" href="#collapseShare">
+										<h4 class="panel-title">
+											<h3 class="panel-title">Share Portfolio Break-up</h3>
+										</h4>
+									</div>
+									<div id="collapseShare" class="panel-collapse collapse">
+										<div class="panel-body" id="homepie1"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="currplan" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
+					<h3 class="page-header">Current Plan</h3>
+					
+					<div class="row placeholders">
+						<ul class="nav nav-tabs nav-justified">
+							<li class="active"  onclick="tclick('pi')"><a href="#pi" data-toggle="tab">Passive Income</a></li>
+							<li  onclick="tclick('mr')"><a href="#mr" data-toggle="tab">Mortgage Reduction</a></li>
+							<li  onclick="tclick('niw')"><a href="#niw" data-toggle="tab">Net Investment Wealth</a></li>
+							<li  onclick="tclick('ta')"><a href="#ta" data-toggle="tab">Total Assets</a></li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane fade in active chartdiv" id="pi">
+								
+							</div>
+							<div class="tab-pane fade chartdiv" id="mr">
+								
+							</div>
+							<div class="tab-pane fade chartdiv" id="niw">
+								
+							</div>
+							<div class="tab-pane fade chartdiv" id="ta">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="makeplan" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
+					<h3 class="page-header">Make Plan</h3>
+				</div>
+				
+				<div id="watchlist" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
+					<h3 class="page-header">Watchlist</h3>
+					
+					<div class="row placeholders">
+						<div class="col-xs-9 col-sm-9 placeholder">
+							<div class="panel panel-info">
+							  <!-- Default panel contents -->
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<h3 class="panel-title">My Watchlist</h3>
+									</h4>
+								</div>
+							  <!-- Table -->
+								<table id="wl_summary" class="table table-hover">
+									<th>Code</th>
+									<th class="number">Bid($)</th>
+									<th class="number">Offer($)</th>
+									<th class="number">Last($)</th>
+									<th class="number">Change($)</th>
+									<th class="number">(%)</th>
+									<th class="number">Volume</th>
+									<tr>
+										<td>HP</td>
+										<td class="number">37.90</td>
+										<td class="number">38.90</td>
+										<td class="number">37.75</td>
+										<td class="number">.220</td>
+										<td class="number">.59</td>
+										<td class="number">5,876,987</td>
+									<tr>
+								</table>
+							</div>
+						</div>
+						<div class="col-xs-3 col-sm-3 placeholder">
+							<div class="panel panel-info">
+							  <!-- Default panel contents -->
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<h3 class="panel-title">Market Indices</h3>
+									</h4>
+								</div>
+							  <!-- Table -->
+								<table class="table">
+									<th>Index</th>
+									<th class="number">Value</th>
+									<th class="number">Change</th>
+									<tr class="success">
+										<td><span class="glyphicon glyphicon-chevron-up"></span> Dow Jones</td>
+										<td class="number">32</td>
+										<td class="number">32</td>
+									<tr>
+									<tr class="danger">
+										<td><span class="glyphicon glyphicon-chevron-down"></span> Hang Seng</td>
+										<td class="number">32</td>
+										<td class="number">32</td>
+									<tr>
+									<tr class="success">
+										<td><span class="glyphicon glyphicon-chevron-up"></span> Nikkei 225</td>
+										<td class="number">32</td>
+										<td class="number">32</td>
+									<tr>
+									<tr class="success">
+										<td><span class="glyphicon glyphicon-chevron-up"></span> FTSE-100</td>
+										<td class="number">32</td>
+										<td class="number">32</td>
+									<tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+		
+	</body>
+</html>
