@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing">
+  <s:Header>
+    <a:Action s:mustUnderstand="1">http://www.reuters.com/ns/2006/05/01/webservices/rkd/Quotes_1/RetrieveItem_3_Reply</a:Action>
+    <CacheResponse xsi:type="DoNotStoreCacheResponse" xmlns="http://www.reuters.com/ns/2008/03/01/webservices/rkd/Cache_1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <Date>2014-04-10T11:32:33.3295091Z</Date>
+      <DoNotStore />
+    </CacheResponse>
+  </s:Header>
+  <s:Body>
+    <ns1:RetrieveItem_Response_3 xmlns:ns1="http://www.reuters.com/ns/2006/05/01/webservices/rkd/Quotes_1">
+      <ns1:ItemResponse>
+        <omm:Item xmlns:omm="http://www.reuters.com/ns/2006/05/01/webservices/rkd/QuotesCommon">
+          <omm:RequestKey NameType="RIC" Service="" Name="AMP">
+          </omm:RequestKey>
+          <omm:QoS>
+            <omm:TimelinessInfo TimeInfo="900" Timeliness="DELAYED">
+            </omm:TimelinessInfo>
+            <omm:RateInfo TimeInfo="3000" Rate="TIME_CONFLATED">
+            </omm:RateInfo>
+          </omm:QoS>
+          <omm:Status>
+            <omm:StatusMsg>OK</omm:StatusMsg>
+            <omm:StatusCode>0</omm:StatusCode>
+          </omm:Status>
+          <omm:Fields>
+            <omm:Field Name="DSPLY_NAME" DataType="Utf8String">
+              <omm:Utf8String>AMERIPRISE </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_2" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_3" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_4" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_5" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="NETCHNG_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HIGH_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="LOW_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PRCTCK_1" DataType="Utf8String">
+              <omm:Utf8String>⇩</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CURRENCY" DataType="Utf8String">
+              <omm:Utf8String>USD</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRADE_DATE" DataType="Utf8String">
+              <omm:Utf8String>09 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OPEN_PRC" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HST_CLOSE" DataType="Double">
+              <omm:Double>109.25</omm:Double>
+            </omm:Field>
+            <omm:Field Name="BID" DataType="Double">
+              <omm:Double>101.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="ASK" DataType="Double">
+              <omm:Double>114.97</omm:Double>
+            </omm:Field>
+            <omm:Field Name="NEWS_TIME" DataType="Utf8String">
+              <omm:Utf8String>12:34</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BIDSIZE" DataType="Int64">
+              <omm:Int64>1</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="ASKSIZE" DataType="Int64">
+              <omm:Int64>2</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="ACVOL_1" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="EARNINGS" DataType="Double">
+              <omm:Double>6.457</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YIELD" DataType="Double">
+              <omm:Double>1.9039</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PERATIO" DataType="Double">
+              <omm:Double>16.9197</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DIVIDENDTP" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="DIVPAYDATE" DataType="Utf8String">
+              <omm:Utf8String>28 FEB 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="EXDIVDATE" DataType="Utf8String">
+              <omm:Utf8String>12 FEB 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CTS_QUAL" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BLKCOUNT" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BLKVOLUM" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="TRDXID_1" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRD_UNITS" DataType="Utf8String">
+              <omm:Utf8String>4DP </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PCTCHNG" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DJTIME" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CLOSE_BID" DataType="Double">
+              <omm:Double>109.24</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CLOSE_ASK" DataType="Double">
+              <omm:Double>109.26</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DIVIDEND" DataType="Double">
+              <omm:Double>2.08</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HSTCLSDATE" DataType="Utf8String">
+              <omm:Utf8String>09 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRHIGH" DataType="Double">
+              <omm:Double>116.82</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YRLOW" DataType="Double">
+              <omm:Double>69.345</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YCHIGH_IND" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YCLOW_IND" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CUM_EX_MKR" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="NASDSTATUS" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PRC_QL2" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRDVOL_1" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="OPENEXID" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CLSEXID" DataType="Utf8String">
+              <omm:Utf8String>NYS</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BID_MMID1" DataType="Utf8String">
+              <omm:Utf8String>PSE</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="ASK_MMID1" DataType="Utf8String">
+              <omm:Utf8String>PSE</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OPTION_XID" DataType="Utf8String">
+              <omm:Utf8String>ABOYZP</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRHIGHDAT" DataType="Utf8String">
+              <omm:Utf8String>09 JAN 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRLOWDAT" DataType="Utf8String">
+              <omm:Utf8String>18 APR 2013</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IRGPRC" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="IRGVOL" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="IRGCOND" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="SALTIM" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV3_TEXT" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IRGXID" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="QUOTIM" DataType="Utf8String">
+              <omm:Utf8String>08:00:00</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV2_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV3_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV4_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="EXCHTIM" DataType="Utf8String">
+              <omm:Utf8String>20:03:04</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="VOL_X_PRC1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="UPC71_REST" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="ADJUST_CLS" DataType="Double">
+              <omm:Double>109.25</omm:Double>
+            </omm:Field>
+            <omm:Field Name="STOCK_TYPE" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IMP_VOLT" DataType="Double">
+              <omm:Double>0.2181</omm:Double>
+            </omm:Field>
+            <omm:Field Name="RDN_EXCHD2" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="FCAST_DATE" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YEAR_FCAST" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PCT_ABNVOL" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="BC_10_50K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BC_50_100K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BC_100K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="PMA_50D" DataType="Double">
+              <omm:Double>108.471</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PMA_150D" DataType="Double">
+              <omm:Double>104.6875</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PMA_200D" DataType="Double">
+              <omm:Double>100.1884</omm:Double>
+            </omm:Field>
+            <omm:Field Name="VMA_10D" DataType="Int64">
+              <omm:Int64>1335562</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="VMA_25D" DataType="Int64">
+              <omm:Int64>1220820</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="VMA_50D" DataType="Int64">
+              <omm:Int64>1225511</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="PRC_QL3" DataType="Utf8String">
+              <omm:Utf8String>R  </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OFF_CLOSE" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="MNEMONIC" DataType="Utf8String">
+              <omm:Utf8String>AMP</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="FIN_STATUS" DataType="Utf8String">
+              <omm:Utf8String>N</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRD_THRU_X" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_ASK" DataType="Double">
+              <omm:Double>114.97</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_BID" DataType="Double">
+              <omm:Double>101.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_CLOSE" DataType="Double">
+              <omm:Double>109.25</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_DATE" DataType="Utf8String">
+              <omm:Utf8String>09 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_EXCHNG" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_HIGH" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_LAST" DataType="Double">
+              <omm:Double>109.25</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_LOW" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_NETCHNG" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_OPEN" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_SOURCE" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_TICK" DataType="Utf8String">
+              <omm:Utf8String>⇩</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_TIME" DataType="Utf8String">
+              <omm:Utf8String>20:03:00</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_VOLUME" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="CF_YIELD" DataType="Double">
+              <omm:Double>1.9039</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_CURRENCY" DataType="Utf8String">
+              <omm:Utf8String>USD</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_NAME" DataType="Utf8String">
+              <omm:Utf8String>AMERIPRISE FINCL</omm:Utf8String>
+            </omm:Field>
+          </omm:Fields>
+        </omm:Item>
+        <omm:Item xmlns:omm="http://www.reuters.com/ns/2006/05/01/webservices/rkd/QuotesCommon">
+          <omm:RequestKey NameType="RIC" Service="" Name="BHP">
+          </omm:RequestKey>
+          <omm:QoS>
+            <omm:TimelinessInfo TimeInfo="900" Timeliness="DELAYED">
+            </omm:TimelinessInfo>
+            <omm:RateInfo TimeInfo="3000" Rate="TIME_CONFLATED">
+            </omm:RateInfo>
+          </omm:QoS>
+          <omm:Status>
+            <omm:StatusMsg>OK</omm:StatusMsg>
+            <omm:StatusCode>0</omm:StatusCode>
+          </omm:Status>
+          <omm:Fields>
+            <omm:Field Name="DSPLY_NAME" DataType="Utf8String">
+              <omm:Utf8String>BHP BILLITO</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_2" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_3" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_4" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="TRDPRC_5" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="NETCHNG_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HIGH_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="LOW_1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PRCTCK_1" DataType="Utf8String">
+              <omm:Utf8String>⇧</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CURRENCY" DataType="Utf8String">
+              <omm:Utf8String>USD</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRADE_DATE" DataType="Utf8String">
+              <omm:Utf8String>10 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OPEN_PRC" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HST_CLOSE" DataType="Double">
+              <omm:Double>72.4</omm:Double>
+            </omm:Field>
+            <omm:Field Name="BID" DataType="Double">
+              <omm:Double>71.06</omm:Double>
+            </omm:Field>
+            <omm:Field Name="ASK" DataType="Double">
+              <omm:Double>71.24</omm:Double>
+            </omm:Field>
+            <omm:Field Name="NEWS_TIME" DataType="Utf8String">
+              <omm:Utf8String>10:36</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BIDSIZE" DataType="Int64">
+              <omm:Int64>6</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="ASKSIZE" DataType="Int64">
+              <omm:Int64>5</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="ACVOL_1" DataType="Int64">
+              <omm:Int64>13870</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="EARNINGS" DataType="Double">
+              <omm:Double>5.5823</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YIELD" DataType="Double">
+              <omm:Double>3.2597</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PERATIO" DataType="Double">
+              <omm:Double>12.9696</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DIVIDENDTP" DataType="Utf8String">
+              <omm:Utf8String>F </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="DIVPAYDATE" DataType="Utf8String">
+              <omm:Utf8String>26 MAR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="EXDIVDATE" DataType="Utf8String">
+              <omm:Utf8String>05 MAR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CTS_QUAL" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BLKCOUNT" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BLKVOLUM" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="TRDXID_1" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRD_UNITS" DataType="Utf8String">
+              <omm:Utf8String>4DP </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PCTCHNG" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DJTIME" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CLOSE_BID" DataType="Double">
+              <omm:Double>72.36</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CLOSE_ASK" DataType="Double">
+              <omm:Double>72.39</omm:Double>
+            </omm:Field>
+            <omm:Field Name="DIVIDEND" DataType="Double">
+              <omm:Double>2.36</omm:Double>
+            </omm:Field>
+            <omm:Field Name="HSTCLSDATE" DataType="Utf8String">
+              <omm:Utf8String>09 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRHIGH" DataType="Double">
+              <omm:Double>72.96</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YRLOW" DataType="Double">
+              <omm:Double>55.66</omm:Double>
+            </omm:Field>
+            <omm:Field Name="YCHIGH_IND" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YCLOW_IND" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CUM_EX_MKR" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="NASDSTATUS" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PRC_QL2" DataType="Utf8String">
+              <omm:Utf8String>NBL</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRDVOL_1" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="OPENEXID" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CLSEXID" DataType="Utf8String">
+              <omm:Utf8String>NYS</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="BID_MMID1" DataType="Utf8String">
+              <omm:Utf8String>PSE</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="ASK_MMID1" DataType="Utf8String">
+              <omm:Utf8String>THM</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OPTION_XID" DataType="Utf8String">
+              <omm:Utf8String>WBCIM4</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRHIGHDAT" DataType="Utf8String">
+              <omm:Utf8String>06 NOV 2013</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YRLOWDAT" DataType="Utf8String">
+              <omm:Utf8String>05 JUL 2013</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IRGPRC" DataType="Double">
+              <omm:Double>71.15</omm:Double>
+            </omm:Field>
+            <omm:Field Name="IRGVOL" DataType="Int64">
+              <omm:Int64>270</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="IRGCOND" DataType="Utf8String">
+              <omm:Utf8String>1265</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="SALTIM" DataType="Utf8String">
+              <omm:Utf8String>11:13:24</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV3_TEXT" DataType="Utf8String">
+              <omm:Utf8String>X</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IRGXID" DataType="Utf8String">
+              <omm:Utf8String>THM</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="QUOTIM" DataType="Utf8String">
+              <omm:Utf8String>11:16:40</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV2_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV3_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="GV4_FLAG" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="EXCHTIM" DataType="Utf8String">
+              <omm:Utf8String>20:02:05</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="VOL_X_PRC1" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="UPC71_REST" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="ADJUST_CLS" DataType="Double">
+              <omm:Double>72.4</omm:Double>
+            </omm:Field>
+            <omm:Field Name="STOCK_TYPE" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="IMP_VOLT" DataType="Double">
+              <omm:Double>0.203</omm:Double>
+            </omm:Field>
+            <omm:Field Name="RDN_EXCHD2" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="FCAST_DATE" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="YEAR_FCAST" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="PCT_ABNVOL" DataType="Double">
+              <omm:Double>0.0070</omm:Double>
+            </omm:Field>
+            <omm:Field Name="BC_10_50K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BC_50_100K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="BC_100K" DataType="Int64">
+              <omm:Int64>0</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="PMA_50D" DataType="Double">
+              <omm:Double>67.0918</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PMA_150D" DataType="Double">
+              <omm:Double>67.4886</omm:Double>
+            </omm:Field>
+            <omm:Field Name="PMA_200D" DataType="Double">
+              <omm:Double>66.3173</omm:Double>
+            </omm:Field>
+            <omm:Field Name="VMA_10D" DataType="Int64">
+              <omm:Int64>1994212</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="VMA_25D" DataType="Int64">
+              <omm:Int64>2234401</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="VMA_50D" DataType="Int64">
+              <omm:Int64>2093004</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="PRC_QL3" DataType="Utf8String">
+              <omm:Utf8String>R  </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="OFF_CLOSE" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="MNEMONIC" DataType="Utf8String">
+              <omm:Utf8String>BHP</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="FIN_STATUS" DataType="Utf8String">
+              <omm:Utf8String>N</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="TRD_THRU_X" DataType="Utf8String">
+              <omm:Utf8String>
+              </omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_ASK" DataType="Double">
+              <omm:Double>71.24</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_BID" DataType="Double">
+              <omm:Double>71.06</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_CLOSE" DataType="Double">
+              <omm:Double>72.4</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_DATE" DataType="Utf8String">
+              <omm:Utf8String>10 APR 2014</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_EXCHNG" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_HIGH" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_LAST" DataType="Double">
+              <omm:Double>72.4</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_LOW" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_NETCHNG" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_OPEN" DataType="Double">
+              <omm:Double>0.0</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_SOURCE" DataType="Utf8String">
+              <omm:Utf8String>NYQ</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_TICK" DataType="Utf8String">
+              <omm:Utf8String>⇧</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_TIME" DataType="Utf8String">
+              <omm:Utf8String>20:02:00</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_VOLUME" DataType="Int64">
+              <omm:Int64>13870</omm:Int64>
+            </omm:Field>
+            <omm:Field Name="CF_YIELD" DataType="Double">
+              <omm:Double>3.2597</omm:Double>
+            </omm:Field>
+            <omm:Field Name="CF_CURRENCY" DataType="Utf8String">
+              <omm:Utf8String>USD</omm:Utf8String>
+            </omm:Field>
+            <omm:Field Name="CF_NAME" DataType="Utf8String">
+              <omm:Utf8String>BHP BILLITON</omm:Utf8String>
+            </omm:Field>
+          </omm:Fields>
+        </omm:Item>
+      </ns1:ItemResponse>
+    </ns1:RetrieveItem_Response_3>
+  </s:Body>
+</s:Envelope>
