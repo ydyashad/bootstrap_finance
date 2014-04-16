@@ -95,7 +95,7 @@
 						pie: { 
 							show: true,
 							radius: 1,
-							tilt: 0.5,
+							tilt: 0.75,
 							label: {
 								show: true,
 								radius: 1,
@@ -145,7 +145,10 @@
 					yaxis: { tickFormatter: function(value, axis) {
 												return "$"+value;
 											}
-							}
+							},
+					selection: {
+						mode: "xy"
+					}
 				});
 				
 				$("<div id='tooltip'></div>").css({
@@ -196,6 +199,7 @@
 				placeholder.unbind();
 				$.plot(placeholder, a, {
 					series: {
+						stack: true,
 						lines: {
 							show: true
 						},
@@ -233,8 +237,9 @@
 				var markings = [
 					{ color: "#f6f6ff", xaxis: { from: -0.5, to: 4.5 } }
 				];
-				
-				$.plot("#homebar", [ bardata ], {
+				placeholder = $("#homebar");
+				placeholder.unbind();
+				$.plot(placeholder, [ bardata ], {
 					series: {
 						bars: {
 							show: true,
@@ -392,8 +397,8 @@
 						<li class="active"><a href="javascript:pageslide('portfilio')">Portfilio</a></li>
 						<li><a href="javascript:pageslide('currplan')">Current Plan</a></li>
 						<li><a href="javascript:pageslide('makeplan')">Make Plan</a></li>
-						<li><a href="#">Shares</a></li>
-						<li><a href="#">Funds</a></li>
+						<li><a href="javascript:pageslide('shares')">Shares</a></li>
+						<li><a href="javascript:pageslide('funds')">Funds</a></li>
 						<li><a href="javascript:pageslide('watchlist')">Watchlist</a></li>
 					</ul>
 				</div>
@@ -482,6 +487,14 @@
 				
 				<div id="makeplan" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
 					<h3 class="page-header">Make Plan</h3>
+				</div>
+				
+				<div id="shares" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
+					<h3 class="page-header">Shares</h3>
+				</div>
+				
+				<div id="funds" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
+					<h3 class="page-header">Funds</h3>
 				</div>
 				
 				<div id="watchlist" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="display: none;">
