@@ -14,6 +14,7 @@
 		<script src="js/jquery.flot.pie.min.js"></script>
 		<script src="js/jquery.flot.categories.min.js"></script>
 		<script src="js/date.js"></script>
+		<script src="phonegap.js"></script>
 		<script>
 			var currpage = "portfilio",
 				placeholder = "";
@@ -62,6 +63,18 @@
 			{
 				drawpie(data,'p1');
 				drawarea();
+				document.addEventListener("deviceready", onDeviceReady, false);
+			}
+			
+			function onDeviceReady() {
+				//document.addEventListener("offline", onOffline, false);
+				document.addEventListener("backbutton", function(e){
+					if(confirm("Do you want to exit?"))
+					{
+						e.preventDefault();
+						navigator.app.exitApp();
+					}
+				}, false);
 			}
 			
 			function drawpie(d,t)
