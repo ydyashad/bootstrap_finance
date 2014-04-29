@@ -10,9 +10,11 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery.flot.min.js"></script>
+		<script src="js/jquery.flot.growraf.js"></script>
 		<script src="js/jquery.flot.time.min.js"></script>
 		<script src="js/jquery.flot.pie.min.js"></script>
 		<script src="js/jquery.flot.categories.min.js"></script>
+		<script src="js/jquery.flot.hiddengraphs.js"></script>
 		<script src="js/date.js"></script>
 		<script src="phonegap.js"></script>
 		<script>
@@ -108,6 +110,14 @@
 								color: "#999",
 								threshold: 0
 							}
+						},
+						grow: { 
+							active: true, 
+							duration: 1500,
+							growings: [{
+								stepDirection: "down",
+								stepMode: "linear"
+							}]
 						}
 					},
 					legend: {
@@ -131,38 +141,50 @@
 					series: {
 						lines: {
 							show: true,
-							fill: true
+							fill: true,
+							fillColor: { colors: [ { opacity: 0.1 }, { opacity: 0.9 } ] }
 						},
 						points: {
 							show: true
+						},
+						grow: { 
+							active: true, 
+							duration: 2000,
+							growings: [{
+								stepDirection: "down",
+								stepMode: "maximum"
+							}]
 						}
 					},
+					colors: ["#EDC240", "#AFD8F8"],
 					grid: {
 						hoverable: true
 					},
-					legend: { position: "se" },
+					legend: { 
+						position: "se"
+					},
 					xaxis: { mode: "time" },
 					yaxis: { tickFormatter: function(value, axis) {
 												return "$"+value;
 											}
-							},
-					selection: {
-						mode: "xy"
-					}
+							}
 				});
 				
 				$("<div id='tooltip'></div>").css({
 					position: "absolute",
 					display: "none",
-					border: "1px solid #fdd",
 					padding: "2px",
-					"background-color": "#fee",
-					opacity: 0.80
+					"background-color": "#FFFFFF",
+					"box-shadow":"2px 2px 5px #802E78",
+					"text-color": "#000000",
+					border: "2px solid #FDD",
+					"border-radius": "5px",
+					opacity: 0.8
 				}).appendTo("body");
 				
 				$("#homearea").bind("plothover", function (event, pos, item) {
 						if (item) {
-							var y = item.datapoint[1];
+							var y = Math.round(item.datapoint[1]);
 
 							$("#tooltip").html(item.series.label + "</br>$" + y)
 								.css({top: item.pageY+5, left: item.pageX+15})
@@ -210,7 +232,10 @@
 					grid: {
 						hoverable: true
 					},
-					legend: { position: "se" },
+					legend: { 
+						hideable: true,
+						position: "se" 
+					},
 					xaxis: { mode: "time" },
 					yaxis: { tickFormatter: function(value, axis) {
 												return "$"+value;
@@ -220,10 +245,10 @@
 				
 				placeholder.bind("plothover", function (event, pos, item) {
 						if (item) {
-							var y = item.datapoint[1];
+							var y = Math.round(item.datapoint[1]);
 
 							$("#tooltip").html(item.series.label + "</br>$" + y)
-								.css({top: item.pageY+5, left: item.pageX+15})
+								.css({top: item.pageY+5, left: item.pageX-45})
 								.fadeIn(200);
 						} else {
 							$("#tooltip").hide();
@@ -246,9 +271,18 @@
 							barWidth: 0.6,
 							align: "center",
 							lineWidth: 0,
-							fillColor: "#428BCA"
+							fillColor: { colors: [ { opacity: 0.8 }, { opacity: 0.4 } ] }
+						},
+						grow: { 
+							active: true, 
+							duration: 2000,
+							growings: [{
+								stepDirection: "up",
+								stepMode: "maximum"
+							}]
 						}
 					},
+					colors: ["#428BCA"],
 					xaxis: {
 						mode: "categories",
 						tickLength: 0
